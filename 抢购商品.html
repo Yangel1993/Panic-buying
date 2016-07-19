@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{margin: 0px;padding: 0px;border: 0px;}
+		#main{position: absolute;top:0px;left: 100px;}
+		#div11,#div22,#div33,#div44,#div1,#div2,#div3,#div4{width: 170px;position:absolute;top:90px; padding-left:3px; }
+		#div11,#div1{left: 0px;border-right:1px solid gray; }
+		#div2,#div22{left: 172px;border-right:1px solid gray;border-left:1px solid gray;}
+		#div3,#div33{left: 344px;border-right:1px solid gray;border-left:1px solid gray;}
+		#div4,#div44{left: 516px;border-left:1px solid gray;}
+		#pt{filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; line-height: 50px;border-bottom:5px solid gray; width: 700px;font-size: 24px;}
+		input{width: 118px;height: 24px;background-color: gray;}
+		button{list-style-type: none;height: 24px;width: 38px;font-size: 12px;margin:0px;padding: 0px; }
+		img{margin: 3px;}
+		p{line-height: 24px;}
+		#div11 img,#div22 img,#div33 img,#div44 img{width: 170px;height:320px;}
+		#div11,#div22,#div33,#div44{z-index: 0;display: none;}
+		#div1,#div2,#div3,#div4{z-index: 1;}
+		#p1,#p4,#p7,#p10{line-height: 50px;}
+		.spa{color: red;}
+		#p13{font-size: 16px;line-height: 50px;background-color: gray;width: 700px;position: absolute;top:450px;left:100px;color: f0f0f0;padding-left:10px; }
+		#p14{font-size: 24px;line-height: 50px;width: 712px;left:0px; bottom:0px;position: absolute;}
+		#bottom{width: 712px;position: absolute;top: 500px;left: 100px;height: 50px;}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oMain=document.getElementById('main');
+			var oDiv1=document.getElementById('div1');
+			var oDiv2=document.getElementById('div2');
+			var oDiv3=document.getElementById('div3');
+			var oDiv4=document.getElementById('div4');
+			var oBottom=document.getElementById('bottom');
+			var oInput1=oDiv1.getElementsByTagName('input')[0];
+			var oInput2=oDiv2.getElementsByTagName('input')[0];
+			var oInput3=oDiv3.getElementsByTagName('input')[0];
+			var oInput4=oDiv4.getElementsByTagName('input')[0];
+			var oBtn1=oDiv1.getElementsByTagName('button')[0];
+			var oBtn2=oDiv2.getElementsByTagName('button')[0];
+			var oBtn3=oDiv3.getElementsByTagName('button')[0];
+			var oBtn4=oDiv4.getElementsByTagName('button')[0];
+			var oP1=document.getElementById('p1');
+			var oP2=document.getElementById('p2');
+			var oP3=document.getElementById('p3');
+			var oP4=document.getElementById('p4');
+
+			var oP5=document.getElementById('p5');
+			var oP6=document.getElementById('p6');
+			var oP7=document.getElementById('p7');
+			var oP8=document.getElementById('p8');
+
+			var oP9=document.getElementById('p9');
+			var oP10=document.getElementById('p10');
+			var oP11=document.getElementById('p11');
+			var oP12=document.getElementById('p12');
+			var oP13=document.getElementById('p13');
+			var oP14=document.getElementById('p14');
+			var aImg=oMain.getElementsByTagName('img');
+			var aP1=oDiv1.getElementsByTagName('p');
+			var aP2=oDiv2.getElementsByTagName('p');
+			var aP3=oDiv3.getElementsByTagName('p');
+			var aP4=oDiv4.getElementsByTagName('p');
+			var inow=null;
+			var inew1=null;
+			var inew2=null;
+			var inew3=null;
+			var inew4=null;
+			 inew1=new Date(oInput1.value);
+			 inew2=new Date(oInput2.value);
+			 inew3=new Date(oInput3.value);
+			 inew4=new Date(oInput4.value);
+			
+			 var t1=0;
+			 var t2=0;
+			 var t3=0;
+			 var t4=0;
+			 var str1='';
+			 var str2='';
+			 var str3='';
+			 var str4='';
+			 var timer1=null;
+			  var timer2=null;
+			  var timer3=null;
+			  var timer4=null;
+			  var a=1;
+			  var aSpan=oMain.getElementsByTagName('span');
+			  var arr=['img1/1.png','img1/2.png','img1/3.png','img1/4.png'];
+			  var arrP=['疯狂599,美的式爆款面板下拉门微波炉','疯狂599,美的式爆款面板下','疯狂599,美的式爆款','疯狂599,美的'];
+			  var arrS=['599.00','1.00','2340.00','146.00']
+			 oBtn1.onclick=function(){
+			 	
+				main(inew1,oInput1,timer1,inow,t1,oP1,str1,oDiv1,div11,arrP[0],arrS[0],arr[0]);
+			}
+			oBtn2.onclick=function(){
+			 	
+				main(inew2,oInput2,timer2,inow,t2,oP4,str2,oDiv2,div22,arrP[1],arrS[1],arr[1]);
+			}
+			oBtn3.onclick=function(){
+			 	
+				main(inew3,oInput3,timer3,inow,t3,oP7,str3,oDiv3,div33,arrP[2],arrS[2],arr[2]);
+			}
+			oBtn4.onclick=function(){
+			 	
+				main(inew4,oInput4,timer4,inow,t4,oP10,str4,oDiv4,div44,arrP[3],arrSs[3],arr[3]);
+			}
+			function main(inew,oInput,timer,inow,t,oP,str,oDiv,obj1,ap,asp,ar){
+				inew = new Date(oInput.value);
+				clearInterval( timer);
+		
+				timer = setInterval (function (){
+			
+					inow = new Date();
+					t = Math.floor( ( inew - inow ) / 1000 );
+				
+					if ( t>= 0 ) {
+					
+						str = '剩余'+Math.floor(t/86400)+'天'+Math.floor(t%86400/3600)+'时'+Math.floor(t%86400%3600/60)+'分'+t%60+'秒';
+				
+						oP.innerHTML = str;
+					
+					} else {
+					
+						clearInterval( timer );
+						shake(oDiv,'left',obj1,ap,asp,ar);
+
+					
+					}
+		
+				}, 1000);
+				
+			}
+			
+			function getStyle ( obj, attr ) { return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr]; }
+			function doMove ( obj, attr, dir, target, endFn ) {
+	
+				dir = parseInt(getStyle( obj, attr )) < target ? dir : -dir;
+	
+				clearInterval( obj.timer );
+	
+				obj.timer = setInterval(function () {
+		
+					var speed = parseInt(getStyle( obj, attr )) + dir;			// 步长
+		
+					if ( speed > target && dir > 0 ||  speed < target && dir < 0  ) {
+						speed = target;
+					}
+		
+					obj.style[attr] = speed + 'px';
+		
+					if ( speed == target ) {
+						clearInterval( obj.timer );
+						endFn && endFn();
+
+					}
+		
+				}, 30);
+			}
+			function setOpacity(element, transparency, speed, callback){//透明度渐变：transparency:透明度 0(全透)-100(不透)；speed:速度1-100，默认为1  
+	            if(typeof(element)=='string')element=document.getElementById(element);  
+	            if(!element.effect){  
+	                element.effect = {};  
+	                element.effect.fade=0;  
+	            }  
+	            clearInterval(element.effect.fade);  
+	            var speed=speed||1;  
+	            var start=(function(elem){  
+	                var alpha;  
+	                if(navigator.userAgent.toLowerCase().indexOf('msie') != -1){  
+	                        alpha=elem.currentStyle.filter.indexOf("opacity=") >= 0?(parseFloat( elem.currentStyle.filter.match(/opacity=([^)]*)/)[1] )) + '':  
+	                        '100';  
+	                }else{  
+	                        alpha=100*elem.ownerDocument.defaultView.getComputedStyle(elem,null)['opacity'];  
+	                }  
+	                return alpha;  
+	            })(element);  
+	            if(window.console&&window.console.log)console.log('start: '+start+" end: "+transparency);  
+	            element.effect.fade = setInterval(function(){  
+	                start = start < transparency ? Math.min(start + speed, transparency) : Math.max(start - speed, transparency);  
+	                element.style.opacity =  start / 100;  
+	                element.style.filter = 'alpha(opacity=' + start + ')';  
+	                if(Math.round(start) == transparency){  
+	                    element.style.opacity =  transparency / 100;  
+	                    element.style.filter = 'alpha(opacity=' + transparency + ')';  
+	                    clearInterval(element.effect.fade);  
+	                    if(callback)callback.call(element);  
+	                }  
+       			 }, 20);  
+    		}
+
+			function shake ( obj, attr, obj1,ap,asp,ar,endFn ) {
+				
+				if ( obj.onOff ) return;
+				obj.onOff = true;
+				
+				var pos = parseInt( getStyle(obj, attr) );			// 有隐患的
+				
+				var arr = [];			// 20, -20, 18, -18 ..... 0
+				var num = 0;
+				var timer = null;
+					
+				for ( var i=20; i>0; i-=2 ) {
+					arr.push( i, -i );
+				}
+				arr.push(0);
+					
+				clearInterval( obj.shake );
+				obj.shake = setInterval(function (){
+					obj.style[attr] = pos + arr[num] + 'px';
+					num++;
+					if ( num === arr.length ) {
+						clearInterval( obj.shake );
+						endFn && endFn();
+						obj.onOff = false;
+						obj1.style.display='block';
+						doMove(obj,'top',5,500);
+						setOpacity(obj,0,1);
+					}
+				}, 50);
+				setTimeout(function(ap,asp,ar){
+					oBottom.style.height=50+90*a+'px';
+					a++;
+					oBottom.innerHTML+='<div id="div111" style="width:712px;height:80px;background-color:gray;margin-top:5px;"><p style="width:200px;height:80px;line-height:80px;margin-right:100px;float:left;"></p><strong style="width:50px;height:80px;line-height:80px;float:left;"></strong><img style="width:85px;height:75px;float:right;margin-right：50px;"/></div>';
+					var oDiv111=document.getElementById('div111');
+					var oP111=oDiv111.getElementsByTagName('p')[0];
+					var oStrong=oDiv111.getElementsByTagName('strong')[0];
+					var oImg=oDiv111.getElementsByTagName('img')[0];
+					oP111.innerHTML=ap;
+					oStrong.innerHTML=asp;
+					oImg.src=ar;
+
+				},3000)
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="main">
+		<p id="pt">限购时间</p>
+		<div id="div1">
+			<input type="text" value="April 27,2016 11:30:0"></input>
+			<button>确定</button>
+			<p id="p1">剩余00天00时00分00秒</p>
+			<img src="img1/1.png"/>
+			<p id="p2">疯狂599,美的式爆款面板下拉门微波炉</p>
+			<p id="p3">抢购价:<span class="spa">￥599.00</span></p>
+		</div>
+		<div id="div11"><img src="img1/background.png"></div>
+		<div id="div2">
+		<input type="text" value="April 27,2016 20:30:0"></input>
+			<button>确定</button>
+			<p id="p4">剩余00天00时00分00秒</p>
+			<img src="img1/2.png"/>
+			<p id="p5">疯狂599,美的式爆款面板下拉门微波炉</p>
+			<p id="p6">抢购价:<span class="spa">￥1.00</span></p>
+		</div>
+		<div id="div22"><img src="img1/background.png"></div>
+		<div id="div3">
+		<input type="text" value="April 27,2016 11:30:0"></input>
+			<button>确定</button>
+			<p id="p7">剩余00天00时00分00秒</p>
+			<img src="img1/3.png"/>
+			<p id="p8">疯狂599,美的式爆款面板下拉门微波炉</p>
+			<p id="p9">抢购价:<span class="spa">￥2340.00</span></p>
+		</div>
+		<div id="div33"><img src="img1/background.png"></div>
+		<div id="div4">
+		<input type="text" value="April 27,2016 11:30:0"></input>
+			<button>确定</button>
+			<p id="p10">剩余00天00时00分00秒</p>
+			<img src="img1/4.png"/>
+			<p id="p11">疯狂599,美的式爆款面板下拉门微波炉</p>
+			<p id="p12">抢购价:<span class="spa">￥146.00</span></p>
+		</div>
+		<div id="div44"><img src="img1/background.png"></div>
+	</div>
+	<p id="p13">商品名称&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp价钱</p>
+	<div id="bottom">
+		<p id="p14">总价：<span id="zong">0</span>元</p>		
+	</div>
+	
+</body>
+</html>
